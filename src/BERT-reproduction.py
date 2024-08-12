@@ -5,6 +5,9 @@ import pandas as pd
 import os
 import random
 import sklearn
+import re
+
+from tqdm import tqdm
 
 
 def read_data():
