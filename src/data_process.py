@@ -7,7 +7,7 @@ import random
 from tqdm import  tqdm
 
 def  read_data():
-    all_data = pd.read_csv(os.path.join("data","test_data.csv"))
+    all_data = pd.read_csv(os.path.join("..","data","test_data.csv"))
     all_text = all_data["content"].tolist()
     return all_text
 
@@ -77,7 +77,7 @@ def build_task2_dataset(text_list):
         all_text2.extend(text2)
         all_label.extend(label)
 
-    pd.DataFrame({"text1":all_text1,"text2":all_text2,"label":all_label}).to_csv(os.path.join("data","task2.csv"),index=False)
+    pd.DataFrame({"text1":all_text1,"text2":all_text2,"label":all_label}).to_csv(os.path.join("..","data","task2.csv"),index=False)
 
 
 def build_word_2_index(all_text):
@@ -103,6 +103,6 @@ def build_word_2_index(all_text):
 
 if __name__ == "__main__":
     all_text = read_data()
-    # build_task2_dataset(all_text)
+    build_task2_dataset(all_text)
     word_2_index = build_word_2_index(all_text)
     print("")
